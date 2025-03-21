@@ -260,7 +260,7 @@ class _CategoriesPage extends State<CategoriesPage> {
                                 ),
                                 ConsultantTile(
                                   image: 'assets/images/app_logo.png',
-                                  iconBgColor: Colors.blue[800],
+                                  iconBgColor: Colors.purple,
                                   consultantName: 'Steven John',
                                   category: 'Relationship',
                                 ),
