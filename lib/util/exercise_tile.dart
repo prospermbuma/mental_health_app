@@ -5,7 +5,7 @@ class ExerciseTile extends StatelessWidget {
   final Icon icon;
   final Color? iconBgColor; // Allow nullable Color
   final String exerciseName;
-  final String numberOfExercise;
+  final int numberOfExercise;
 
   // Constructor
   const ExerciseTile({
@@ -55,7 +55,7 @@ class ExerciseTile extends StatelessWidget {
                     SizedBox(height: 5),
                     // Subtitle
                     Text(
-                      numberOfExercise, // Use dynamic numberOfExercise
+                      '$numberOfExercise Exercises', // Use dynamic numberOfExercise
                       style: TextStyle(
                         fontSize: 14,
                         color: Colors.grey,

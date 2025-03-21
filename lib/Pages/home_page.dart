@@ -202,13 +202,13 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   iconBgColor: Colors.deepOrange,
                                   exerciseName: 'Speaking Skills',
-                                  numberOfExercise: '16 Exercises',
+                                  numberOfExercise: 16,
                                 ),
                                 ExerciseTile(
                                   icon: Icon(Icons.person, color: Colors.white),
                                   iconBgColor: Colors.blue[800],
                                   exerciseName: 'Reading Speed',
-                                  numberOfExercise: '8 Exercises',
+                                  numberOfExercise: 8,
                                 ),
                                 ExerciseTile(
                                   icon: Icon(
@@ -217,7 +217,7 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   iconBgColor: Colors.pink,
                                   exerciseName: 'Writing Speed',
-                                  numberOfExercise: '10 Exercises',
+                                  numberOfExercise: 10,
                                 ),
                                 ExerciseTile(
                                   icon: Icon(
@@ -226,7 +226,7 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   iconBgColor: Colors.deepPurple,
                                   exerciseName: 'Yoga Poses',
-                                  numberOfExercise: '10 Exercises',
+                                  numberOfExercise: 12,
                                 ),
                               ],
                             ),
