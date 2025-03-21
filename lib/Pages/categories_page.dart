@@ -258,26 +258,23 @@ class _CategoriesPage extends State<CategoriesPage> {
                                   consultantName: 'Janeth Mkeno',
                                   category: 'Education',
                                 ),
-                                ExerciseTile(
-                                  icon: Icon(Icons.person, color: Colors.white),
+                                ConsultantTile(
+                                  image: 'assets/images/app_logo.png',
                                   iconBgColor: Colors.blue[800],
-                                  exerciseName: 'Reading Speed',
-                                  numberOfExercise: 8,
+                                  consultantName: 'Steven John',
+                                  category: 'Relationship',
                                 ),
-                                ExerciseTile(
-                                  icon: Icon(
-                                    Icons.book_outlined,
-                                    color: Colors.white,
-                                  ),
+                                ConsultantTile(
+                                  image: 'assets/images/app_logo.png',
+                                  iconBgColor: Colors.blue,
+                                  consultantName: 'Godson Hambiye',
+                                  category: 'Career',
+                                ),
+                                ConsultantTile(
+                                  image: 'assets/images/app_logo.png',
                                   iconBgColor: Colors.pink,
-                                  exerciseName: 'Writing Speed',
-                                  numberOfExercise: 10,
-                                ),
-                                ExerciseTile(
-                                  icon: Icon(Icons.spa, color: Colors.white),
-                                  iconBgColor: Colors.deepPurple,
-                                  exerciseName: 'Yoga Poses',
-                                  numberOfExercise: 12,
+                                  consultantName: 'Neema Nyoni',
+                                  category: 'Entertainment',
                                 ),
                               ],
                             ),
