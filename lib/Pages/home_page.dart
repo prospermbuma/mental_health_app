@@ -17,29 +17,36 @@ class _HomePageState extends State<HomePage> {
         statusBarColor: Colors.blue[800],
         // Match status bar color with background
         statusBarIconBrightness:
-            Brightness.light, // Light icons for dark background
+        Brightness.light, // Light icons for dark background
       ),
       child: Scaffold(
         backgroundColor: Colors.blue[800],
-        bottomNavigationBar: BottomNavigationBar(
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home, size: 30, color: Colors.blue[800]),
-              label: '',
+        bottomNavigationBar: BottomAppBar(
+          color: Colors.white,
+          child: SizedBox(
+            height: 60, // Set the height of the bottom navigation bar
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                IconButton(
+                  icon: Icon(Icons.home, size: 30, color: Colors.blue[800]),
+                  onPressed: () {},
+                ),
+                IconButton(
+                  icon: Icon(Icons.window, size: 30, color: Colors.blue[800]),
+                  onPressed: () {},
+                ),
+                IconButton(
+                  icon: Icon(Icons.message, size: 30, color: Colors.blue[800]),
+                  onPressed: () {},
+                ),
+                IconButton(
+                  icon: Icon(Icons.person, size: 30, color: Colors.blue[800]),
+                  onPressed: () {},
+                ),
+              ],
             ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.window, size: 30, color: Colors.blue[800]),
-              label: '',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.email, size: 30, color: Colors.blue[800]),
-              label: '',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person, size: 30, color: Colors.blue[800]),
-              label: '',
-            ),
-          ],
+          ),
         ),
         body: SafeArea(
           child: Column(
@@ -141,8 +148,8 @@ class _HomePageState extends State<HomePage> {
                       children: [
                         _buildEmotionTile("😫", "Badly"),
                         _buildEmotionTile("😊", "Fine"),
-                        _buildEmotionTile("😁", "Well"),
-                        _buildEmotionTile("😀", "Excellent"),
+                        _buildEmotionTile("😀", "Well"),
+                        _buildEmotionTile("🤩", "Excellent"),
                       ],
                     ),
                   ],
