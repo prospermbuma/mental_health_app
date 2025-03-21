@@ -14,17 +14,18 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle(
-        statusBarColor: Colors.blue[800],
-        // Match status bar color with background
-        statusBarIconBrightness:
-        Brightness.light, // Light icons for dark background
+        statusBarColor: Colors.blue[800], // Status bar color
+        statusBarIconBrightness: Brightness.light, // Light icons for dark background
+
+        systemNavigationBarColor: Colors.grey[100], // Bottom bar color
+        systemNavigationBarIconBrightness: Brightness.dark, // Light icons for dark background
       ),
       child: Scaffold(
         backgroundColor: Colors.blue[800],
         bottomNavigationBar: BottomAppBar(
-          color: Colors.white,
+          color: Colors.grey[100], // Match with status bar color
           child: SizedBox(
-            height: 60, // Set the height of the bottom navigation bar
+            height: 60, // Set height of bottom navigation bar
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -59,7 +60,6 @@ class _HomePageState extends State<HomePage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        /* ====== Hi Prosper! ====== */
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -228,7 +228,7 @@ class _HomePageState extends State<HomePage> {
                                 ),
                                 ExerciseTile(
                                   icon: Icon(
-                                    Icons.fitness_center,
+                                    Icons.spa,
                                     color: Colors.white,
                                   ),
                                   iconBgColor: Colors.deepPurple,
