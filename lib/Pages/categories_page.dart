@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:mental_health_app/Pages/categories_page.dart';
+import 'package:mental_health_app/Pages/home_page.dart';
+import 'package:mental_health_app/util/category_box.dart';
+import 'package:mental_health_app/util/consultant_tile.dart';
 import 'package:mental_health_app/util/exercise_tile.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class CategoriesPage extends StatefulWidget {
+  const CategoriesPage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<CategoriesPage> createState() => _CategoriesPage();
 }
 
-class _HomePageState extends State<HomePage> {
+class _CategoriesPage extends State<CategoriesPage> {
+  @override
   @override
   Widget build(BuildContext context) {
     return AnnotatedRegion<SystemUiOverlayStyle>(
@@ -143,45 +146,11 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                     ),
-
-                    SizedBox(height: 25),
-
-                    /* ====== How do you feel ====== */
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'How do you feel?',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        Text(
-                          "••",
-                          style: TextStyle(fontSize: 20, color: Colors.white),
-                        ),
-                      ],
-                    ),
-
-                    SizedBox(height: 25),
-
-                    /* ====== How do you feel icons ====== */
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        _buildEmotionTile("😫", "Badly"),
-                        _buildEmotionTile("😊", "Fine"),
-                        _buildEmotionTile("😀", "Well"),
-                        _buildEmotionTile("🤩", "Excellent"),
-                      ],
-                    ),
                   ],
                 ),
               ),
 
-              SizedBox(height: 25),
+              SizedBox(height: 33),
 
               Expanded(
                 child: Container(
@@ -199,13 +168,69 @@ class _HomePageState extends State<HomePage> {
                         vertical: 25,
                       ),
                       child: Column(
-                        /* ==== Exercises heading ==== */
+                        /* ==== Category heading ==== */
                         children: [
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                'Exercises',
+                                'Category',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Text(
+                                "••",
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.grey[900],
+                                ),
+                              ),
+                            ],
+                          ),
+
+                          SizedBox(height: 25),
+
+                          /* ==== Categories blocks ==== */
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              CategoryBox(
+                                iconBgColor: Colors.purple,
+                                categoryName: 'Relationship',
+                              ),
+                              CategoryBox(
+                                iconBgColor: Colors.blue,
+                                categoryName: 'Career',
+                              ),
+                            ],
+                          ),
+
+                          SizedBox(height: 15),
+
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              CategoryBox(
+                                iconBgColor: Colors.deepOrange,
+                                categoryName: 'Education',
+                              ),
+                              CategoryBox(
+                                iconBgColor: Colors.pink,
+                                categoryName: 'Other',
+                              ),
+                            ],
+                          ),
+
+                          SizedBox(height: 25),
+
+                          /* ==== Consultant heading ==== */
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Consultant',
                                 style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
@@ -223,18 +248,15 @@ class _HomePageState extends State<HomePage> {
 
                           SizedBox(height: 20),
 
-                          /* ==== Listview of exercises ==== */
+                          /* ==== Listview of consultants ==== */
                           Expanded(
                             child: ListView(
                               children: [
-                                ExerciseTile(
-                                  icon: Icon(
-                                    Icons.favorite,
-                                    color: Colors.white,
-                                  ),
+                                ConsultantTile(
+                                  image: 'assets/images/app_logo.png',
                                   iconBgColor: Colors.deepOrange,
-                                  exerciseName: 'Speaking Skills',
-                                  numberOfExercise: 16,
+                                  consultantName: 'Janeth Mkeno',
+                                  category: 'Education',
                                 ),
                                 ExerciseTile(
                                   icon: Icon(Icons.person, color: Colors.white),
@@ -270,25 +292,6 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-    );
-  }
-
-  Widget _buildEmotionTile(String emoji, String label) {
-    return Column(
-      children: [
-        Container(
-          decoration: BoxDecoration(
-            color: Colors.blue[600],
-            borderRadius: BorderRadius.circular(12),
-          ),
-          child: Padding(
-            padding: EdgeInsets.all(16),
-            child: Text(emoji, style: TextStyle(fontSize: 28)),
-          ),
-        ),
-        SizedBox(height: 8),
-        Text(label, style: TextStyle(color: Colors.white, fontSize: 14)),
-      ],
     );
   }
 }
