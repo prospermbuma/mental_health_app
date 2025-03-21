@@ -108,7 +108,7 @@ class _HomePageState extends State<HomePage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    _buildEmotionTile("😌", "Badly"),
+                    _buildEmotionTile("😫", "Badly"),
                     _buildEmotionTile("😊", "Fine"),
                     _buildEmotionTile("😁", "Well"),
                     _buildEmotionTile("😀", "Excellent"),
@@ -131,11 +131,11 @@ class _HomePageState extends State<HomePage> {
             borderRadius: BorderRadius.circular(12),
           ),
           child: Padding(
-            padding: EdgeInsets.all(12),
-            child: Text(emoji, style: TextStyle(fontSize: 24)),
+            padding: EdgeInsets.all(16),
+            child: Text(emoji, style: TextStyle(fontSize: 28)),
           ),
         ),
-        SizedBox(height: 12),
+        SizedBox(height: 8),
         Text(label, style: TextStyle(color: Colors.white, fontSize: 14)),
       ],
     );
